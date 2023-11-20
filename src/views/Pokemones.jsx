@@ -12,11 +12,9 @@ const Pokemones = () => {
   async function getPokemonEscogido(signal) {
     try {
       const url = "https://pokeapi.co/api/v2/pokemon/" + pokemonEscogido;
-      console.log("url", url);
       const response = await fetch(url, signal);
       const data = await response.json();
       const pokemonsData = data;
-      console.log("data en pokemones", pokemonsData);
       setSelectedPokemon(pokemonsData);
     } catch (error) {
       console.log(error);
@@ -33,10 +31,15 @@ const Pokemones = () => {
       controller.abort();
     };
   }, []);
+
+  if (!selectedPokemon) return;
+  const { name, sprites } = selectedPokemon;
   return (
     <div>
       <h1>pokemon seleccionado:</h1>
-      <h2>{pokemonEscogido}</h2>
+      {/* <h2>{pokemonEscogido}</h2> */}
+      <h2>{name}</h2>
+      <img src={sprites?.front_default} alt="" />
     </div>
   );
 };

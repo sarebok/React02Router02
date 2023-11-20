@@ -12,7 +12,6 @@ const Selector = () => {
   const handleChange = (e) => {
     setSelectedPokemon(e.target.value);
     console.log("selector selected", selectedPokemon);
-    goToSelected();
   };
 
   const handleSubmit = (e) => {
