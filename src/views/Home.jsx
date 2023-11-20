@@ -3,14 +3,14 @@ import { useState, useEffect } from "react";
 import { PokemonContext } from "../context/PokemonContext";
 
 const Home = () => {
-  const { setPokemons, pokemons } = useContext(PokemonContext);
+  const { setPokemons } = useContext(PokemonContext);
   //llamada a la api
   async function getPokemons(signal) {
     try {
       const url = "https://pokeapi.co/api/v2/pokemon?limit=151";
       const response = await fetch(url, signal);
       const data = await response.json();
-      const pokemonsData = data;
+      const pokemonsData = data.results;
       setPokemons(pokemonsData);
     } catch (error) {
       console.log(error);
@@ -31,8 +31,6 @@ const Home = () => {
   return (
     <div>
       <h1>Bienvenido Maestro Pokemon</h1>
-      {/* <img src={pokemons?.sprites.back_default} alt="" /> */}
-      <p>{pokemons?.results[150].name}</p>
     </div>
   );
 };

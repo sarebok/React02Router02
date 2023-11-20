@@ -10,7 +10,7 @@ const NavBar = () => {
       <Container>
         <Nav className="me-auto">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/pokemones">Pokemones</NavLink>
+          <NavLink to="/pokeselector">Pokemones</NavLink>
         </Nav>
       </Container>
     </Navbar>

@@ -1,9 +1,11 @@
 import "./App.css";
 import { Router, Routes, Route } from "react-router-dom";
-import Home from "./assets/views/Home";
-import Pokemones from "./assets/views/Pokemones";
-import NotFound from "./assets/views/NotFound";
-import NavBar from "./assets/components/NavBar";
+
+import Home from "./views/Home";
+import Pokemones from "./views/Pokemones";
+import NotFound from "./views/NotFound";
+import NavBar from "./components/NavBar";
+import Selector from "./views/Selector";
 
 function App() {
   return (
@@ -11,7 +13,8 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/pokemones" element={<Pokemones />}></Route>
+        <Route path="/pokeselector" element={<Selector />}></Route>
+        <Route path="/pokemones/:pokemonEscogido" element={<Pokemones />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </>
