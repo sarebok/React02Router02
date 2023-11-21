@@ -1,5 +1,4 @@
 import React from "react";
-import Selector from "./Selector";
 import { useParams } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { PokemonContext } from "../context/PokemonContext";
@@ -35,10 +34,9 @@ const Pokemones = () => {
   if (!selectedPokemon) return;
   const { name, sprites } = selectedPokemon;
   return (
-    <div>
-      <h1>pokemon seleccionado:</h1>
-      {/* <h2>{pokemonEscogido}</h2> */}
-      <h2>{name}</h2>
+    <div className="selected-pokemon">
+      <h3>pokemon seleccionado: </h3>
+      <h1>{name}</h1>
       <img src={sprites?.front_default} alt="" />
     </div>
   );

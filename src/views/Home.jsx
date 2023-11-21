@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { PokemonContext } from "../context/PokemonContext";
+import { Container } from "react-bootstrap";
 
 const Home = () => {
   const { setPokemons } = useContext(PokemonContext);
@@ -29,9 +30,9 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <Container>
       <h1>Bienvenido Maestro Pokemon</h1>
-    </div>
+    </Container>
   );
 };
 
